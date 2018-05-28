@@ -16,7 +16,7 @@ class Syngrafeas:
         self.books = []
         self.config = CONFIG['books']
 
-    def book_append(self, bookname = None):
+    def book_append(self, bookname=None):
         if type(bookname) is type("cadena"):
             book_path = self.config['TXT_PATH']+bookname+self.config['TXT_EXT']
             my_file = Path(book_path)
@@ -54,8 +54,10 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         write("modeRun Overide: ", bool(sys.argv[2]), TYPE=0)
     write("Debug: ", CONFIG['debug'])
-    write("CONFIG: ", CONFIG)
+    write("CONFIG", CONFIG)
+    print(" - - - - - - - -")
+    write(CONFIG)
     syngrafeas = Syngrafeas()
-    write("ruta libros: ",CONFIG['books']['TXT_PATH'])
-    syngrafeas.book_append("quijote")
-    write(syngrafeas.book_getAll())
+    write("ruta libros: ", CONFIG['books']['TXT_PATH'])
+    #syngrafeas.book_append("quijote")
+    #write(syngrafeas.book_getAll())
